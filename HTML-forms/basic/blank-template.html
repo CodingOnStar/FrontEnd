@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Form template</title>
+</head>
+
+<body>
+  <form action="http://foo.com" method="post">
+    <h1>Payment form</h1>
+    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+    <section>
+      <h2>Contact Information</h2>
+      <fieldset>
+        <legend>Title</legend>
+        <ul>
+          <li>
+            <label for="title_1">
+              <input id="title_1" type="radio" name="title">
+              Mister
+            </label>
+          </li>
+          <li>
+            <label for="title_2">
+              <input id="title_2" type="radio" name="title">
+              Miss
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <p>
+        <label for="name">
+          <span>Name:</span>
+          <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input id="name" type="text" name="username">
+        <label for="mail">
+          <span>Mail:</span>
+          <strong><abbr title="required">*</abbr></strong>
+          <input id="mail" type="email" name="usermail">
+        </label>
+        <label for="pwd">
+          <span>Password:</span>
+          <strong><abbr title="required">*</abbr></strong>
+          <input id="pwd" type="password" name="userpwd">
+        </label>
+      </p>
+    </section>
+    <section>
+      <h2>Payment Information</h2>
+      <p>
+        <label for="card">
+          <span>Card Type:</span>
+        </label>
+        <!--下拉选项-->
+        <select id="card" name="usercard">
+          <option value="Visa">Visa</option>
+          <option value="MC">MC</option>
+          <option value="AME">AME</option>
+        </select>
+      </p>
+      <p>
+        <label for="number">
+          <span>Card Number:</span>
+          <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input id="number" type="number" name="ID number">
+      </p>
+      <p>
+        <label for="data">
+          <span>Expiration Data</span>
+          <strong><abbr title="required">*</abbr></strong>
+          <em>formatted as mm/yy</em>
+        </label>
+        <input id="data" type="data" name="expiration">
+      </p>
+    </section>
+    <p><button type="submit">Validate the Payment</button></p>
+
+    <!--自动补全框-->
+    <label for="myFruit">What is your favorite fruit? (With fallback)</label>
+    <input type="text" id="myFruit" name="fruit" list="fruitList">
+    <datalist id="fruitList">
+      <label for="suggestion">or pick a fruit</label>
+      <select id="suggestion" name="altFruit">
+        <option>Apple</option>
+        <option>Banana</option>
+        <option>Blackberry</option>
+        <option>Blueberry</option>
+        <option>Lemon</option>
+        <option>Lychee</option>
+        <option>Peach</option>
+        <option>Pear</option>
+      </select>
+    </datalist>
+    <!--选项框-->
+    <input type="checkbox" checked id="carrots" name="carrots" value="carrots">
+
+    <input type="number" id="age" name="age" min="1" max="10" step="2">
+
+    <!--结合Javascript将滑动条实时的数值显示出来-->
+    <label for="beans">How many beans can you eat?</label>
+    <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+    <span class="beancount"></span>
+    <script src=beancount.js></script>
+    <!--拾色器-->
+    <input type="color" id="color" name="color">
+    <!--仪表
+    optimum值定义了<meter>元素的最优值。在与htmlattrxref(“low”、“meter”)和high值的联合中，它定义了该范围的哪个部分是优先的：
+      如果optimum值在较低的范围内，则较低的范围被认为是首选项，中等范围被认为是一般的，而较高的范围被认为是最坏的部分。
+      如果optimum值在该范围的中等部分，则较低的范围被认为是一个一般的，中等范围被认为是优先的部分，而较高的范围也被认为是平均值。
+      如果optimum值在较高的范围内，则较低的范围被认为是最坏的部分，中等范围被认为是一般的部分，较高的范围被认为是优先的部分。
+    -->
+    <meter min="0" max="100" value="75" low="33" high="66" optimum="5">75</meter>
+  </form>
+</body>
+
+</html>
