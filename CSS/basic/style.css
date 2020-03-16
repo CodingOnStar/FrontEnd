@@ -1,0 +1,62 @@
+.h1 {
+    color: red
+}
+
+h1 {
+    color: green;
+    cursor: pointer;
+}
+
+p.test {
+    width: 1em;
+}
+
+ul:first-child {
+    color: green;
+}
+
+span {
+    color: orange
+}
+
+li em {
+    color: rebeccapurple
+}
+
+h1 {
+    font-size: 200%;
+}
+
+a:hover {
+    text-decoration: none
+}
+
+a:link {
+    color: red
+}
+
+a:visited {
+    color: plum
+}
+
+body h1+p.special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+    border: calc(10px - 1px) solid white;
+}
+
+body {
+    background-color: blue;
+}
+
+@media (min-width: 30em) {
+    body {
+        background-color: pink;
+        background-image: url(../HTML/HTML-basic/favicon.ico)
+    }
+}
+
+a:hover img {
+    border-style: outset;
+}

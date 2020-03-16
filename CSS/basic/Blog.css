@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: hotpink;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    border-bottom: 1px solid #375e97;
+    text-decoration: underline dashed red;
+
+}
+
+h2 {
+    font-size: 1.5em;
+    text-decoration: green wavy underline;
+    font-weight: 900;
+}
+
+h2:hover {
+    color: green;
+}
+
+.job-title {
+    color: #999999;
+    font-weight: bold;
+}
+
+a:link {
+    border: 1px solid purple;
+    background-color: gold;
+}
+
+a:visited {
+    color: #fb6542;
+    background-color: gray;
+}
+
+a:hover {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+}
+
+li {
+    font-size: 1.5em;
+}
