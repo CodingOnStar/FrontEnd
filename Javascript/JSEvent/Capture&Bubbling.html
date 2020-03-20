@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Show video box example</title>
+    <style>
+        div {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 480px;
+            height: 380px;
+            border-radius: 10px;
+            background-color: #eee;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+        }
+
+        .hidden {
+            left: -50%;
+        }
+
+        .showing {
+            left: 50%;
+        }
+
+        div video {
+            display: block;
+            width: 400px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Display video</button>
+
+    <div class="hidden">
+        <video>
+            <source src="rabbit320.mp4" type="video/mp4">
+            <source src="rabbit320.webm" type="video/webm">
+            <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a>
+                instead.</p>
+        </video>
+    </div>
+    <!-- 
+在捕获阶段：
+浏览器检查元素的最外层祖先<html>，是否在捕获阶段中注册了一个onclick事件处理程序，如果是，则运行它。
+然后，它移动到<html>中单击元素的下一个祖先元素，并执行相同的操作，然后是单击元素再下一个祖先元素，依此类推，直到到达实际点击的元素。
+
+在冒泡阶段，恰恰相反:
+浏览器检查实际点击的元素是否在冒泡阶段中注册了一个onclick事件处理程序，如果是，则运行它
+然后它移动到下一个直接的祖先元素，并做同样的事情，然后是下一个，等等，直到它到达<html>元素。
+现代浏览器通常使用冒泡阶段
+-->
+    <script>
+        const btn = document.querySelector('button');
+        const videoBox = document.querySelector('div');
+        const video = document.querySelector('video');
+
+        btn.onclick = function () {
+            videoBox.setAttribute('class', 'showing');
+        }
+
+        videoBox.onclick = function () {
+            videoBox.setAttribute('class', 'hidden');
+        };
+
+        video.onclick = function () {
+            video.play();
+        };
+    </script>
+</body>
+
+</html>
