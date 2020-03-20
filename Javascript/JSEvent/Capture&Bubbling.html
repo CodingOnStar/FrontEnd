@@ -51,7 +51,8 @@
 在冒泡阶段，恰恰相反:
 浏览器检查实际点击的元素是否在冒泡阶段中注册了一个onclick事件处理程序，如果是，则运行它
 然后它移动到下一个直接的祖先元素，并做同样的事情，然后是下一个，等等，直到它到达<html>元素。
-现代浏览器通常使用冒泡阶段
+
+注解: 如上所述，默认情况下，所有事件处理程序都是在冒泡阶段注册的，这在大多数情况下更有意义。如果您真的想在捕获阶段注册一个事件，那么您可以通过使用addEventListener()注册您的处理程序，并将可选的第三个属性设置为true。
 -->
     <script>
         const btn = document.querySelector('button');
@@ -66,7 +67,8 @@
             videoBox.setAttribute('class', 'hidden');
         };
 
-        video.onclick = function () {
+        video.onclick = function (e) {
+            e.stopPropagation();
             video.play();
         };
     </script>
