@@ -1,21 +1,33 @@
-<!-- 这是我们小部件的主要容器.
-     tabindex属性是用来让用户聚焦在小部件上的. 
-     稍后我们会发现最好通过JavaScript来设定它的值. -->
-<div class="select" tabindex="0">
+<html>
 
-    <!-- 这个容器用来显示组件现在的值 -->
-    <span class="value">Cherry</span>
+<head>
+    <meta charset="utf-8">
+    <title>Form template</title>
+    <link rel="stylesheet" href="tabindex.css">
+</head>
 
-    <!-- 这个容器包含我们的组件的所有可用选项.
-       因为他是一个列表，用ul元素是有意义的. -->
-    <ul class="optList">
-        <!-- 每个选项只包含用来显示的值，
-         稍后我们会知道如何处理和表单一起发送的真实值 -->
-        <li class="option">Cherry</li>
-        <li class="option">Lemon</li>
-        <li class="option">Banana</li>
-        <li class="option">Strawberry</li>
-        <li class="option">Apple</li>
-    </ul>
 
-</div>
+<body class="no-widget">
+    <form class="no-widget">
+        <select name="myFruit">
+            <option>Cherry</option>
+            <option>Lemon</option>
+            <option>Banana</option>
+            <option>Strawberry</option>
+            <option>Apple</option>
+        </select>
+
+        <div class="select">
+            <span class="value">Cherry</span>
+            <ul class="optList hidden">
+                <li class="option">Cherry</li>
+                <li class="option">Lemon</li>
+                <li class="option">Banana</li>
+                <li class="option">Strawberry</li>
+                <li class="option">Apple</li>
+            </ul>
+        </div>
+    </form>
+</body>
+
+</html>
